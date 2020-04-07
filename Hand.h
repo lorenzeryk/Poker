@@ -5,6 +5,7 @@
 #ifndef POKER_HAND_H
 #define POKER_HAND_H
 #include "Card.h";
+#include <vector>
 
 class Hand {
 public:
@@ -14,8 +15,9 @@ public:
     Card getCard(int n);
     Hand getVisible();
     int evaluate();
+    void setCardVisible(bool visible, int n);
 private:
-
+    vector<Card> hand;
 };
 
 

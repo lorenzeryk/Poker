@@ -6,7 +6,7 @@
 Card::Card(string cardName, int cardValue) {
     this->cardName = cardName;
     this->cardValue = cardValue;
-    faceUp;
+    faceUp = true;
 }
 
 string Card::getName() {

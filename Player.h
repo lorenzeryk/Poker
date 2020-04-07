@@ -20,7 +20,9 @@ public:
     void addChips(int chips);
     int getChips();
 private:
-
+    Hand hand;
+    int id;
+    int chips;
 };
 
 
