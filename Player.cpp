@@ -27,9 +27,9 @@ Hand Player::getHand() {
 };
 
 void Player::addChips(int chips) {
-
+    this->chips += chips;
 };
 
 int Player::getChips() {
-
+    return chips;
 };

@@ -19,11 +19,11 @@ Card Hand::getCard(int n) {
 };
 
 Hand Hand::getVisible() {
-
+//TODO
 };
 
 int Hand::evaluate() {
-
+//TODO
 };
 
 void Hand::setCardVisible(bool visible, int n) {

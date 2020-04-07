@@ -5,7 +5,7 @@
 #ifndef POKER_ALPHAPLAYER_H
 #define POKER_ALPHAPLAYER_H
 #include "Player.h"
-
+//TODO Alpha Rules
 class AlphaPlayer : public Player {
 public:
     AlphaPlayer(int id, int chips): Player(id, chips){

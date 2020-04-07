@@ -29,7 +29,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
         if (handsPlayed % 2 == 0) turn = 0;
         else turn = 1;
 
-
+        //TODO add rest of round
 
         handsPlayed++;
     }
