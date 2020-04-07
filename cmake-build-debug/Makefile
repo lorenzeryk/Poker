@@ -122,6 +122,249 @@ Poker/fast:
 	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/build
 .PHONY : Poker/fast
 
+AlphaPlayer.obj: AlphaPlayer.cpp.obj
+
+.PHONY : AlphaPlayer.obj
+
+# target to build an object file
+AlphaPlayer.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/AlphaPlayer.cpp.obj
+.PHONY : AlphaPlayer.cpp.obj
+
+AlphaPlayer.i: AlphaPlayer.cpp.i
+
+.PHONY : AlphaPlayer.i
+
+# target to preprocess a source file
+AlphaPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/AlphaPlayer.cpp.i
+.PHONY : AlphaPlayer.cpp.i
+
+AlphaPlayer.s: AlphaPlayer.cpp.s
+
+.PHONY : AlphaPlayer.s
+
+# target to generate assembly for a file
+AlphaPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/AlphaPlayer.cpp.s
+.PHONY : AlphaPlayer.cpp.s
+
+Bet.obj: Bet.cpp.obj
+
+.PHONY : Bet.obj
+
+# target to build an object file
+Bet.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Bet.cpp.obj
+.PHONY : Bet.cpp.obj
+
+Bet.i: Bet.cpp.i
+
+.PHONY : Bet.i
+
+# target to preprocess a source file
+Bet.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Bet.cpp.i
+.PHONY : Bet.cpp.i
+
+Bet.s: Bet.cpp.s
+
+.PHONY : Bet.s
+
+# target to generate assembly for a file
+Bet.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Bet.cpp.s
+.PHONY : Bet.cpp.s
+
+BetHistory.obj: BetHistory.cpp.obj
+
+.PHONY : BetHistory.obj
+
+# target to build an object file
+BetHistory.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/BetHistory.cpp.obj
+.PHONY : BetHistory.cpp.obj
+
+BetHistory.i: BetHistory.cpp.i
+
+.PHONY : BetHistory.i
+
+# target to preprocess a source file
+BetHistory.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/BetHistory.cpp.i
+.PHONY : BetHistory.cpp.i
+
+BetHistory.s: BetHistory.cpp.s
+
+.PHONY : BetHistory.s
+
+# target to generate assembly for a file
+BetHistory.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/BetHistory.cpp.s
+.PHONY : BetHistory.cpp.s
+
+BetaPlayer.obj: BetaPlayer.cpp.obj
+
+.PHONY : BetaPlayer.obj
+
+# target to build an object file
+BetaPlayer.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/BetaPlayer.cpp.obj
+.PHONY : BetaPlayer.cpp.obj
+
+BetaPlayer.i: BetaPlayer.cpp.i
+
+.PHONY : BetaPlayer.i
+
+# target to preprocess a source file
+BetaPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/BetaPlayer.cpp.i
+.PHONY : BetaPlayer.cpp.i
+
+BetaPlayer.s: BetaPlayer.cpp.s
+
+.PHONY : BetaPlayer.s
+
+# target to generate assembly for a file
+BetaPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/BetaPlayer.cpp.s
+.PHONY : BetaPlayer.cpp.s
+
+Card.obj: Card.cpp.obj
+
+.PHONY : Card.obj
+
+# target to build an object file
+Card.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Card.cpp.obj
+.PHONY : Card.cpp.obj
+
+Card.i: Card.cpp.i
+
+.PHONY : Card.i
+
+# target to preprocess a source file
+Card.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Card.cpp.i
+.PHONY : Card.cpp.i
+
+Card.s: Card.cpp.s
+
+.PHONY : Card.s
+
+# target to generate assembly for a file
+Card.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Card.cpp.s
+.PHONY : Card.cpp.s
+
+Game.obj: Game.cpp.obj
+
+.PHONY : Game.obj
+
+# target to build an object file
+Game.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Game.cpp.obj
+.PHONY : Game.cpp.obj
+
+Game.i: Game.cpp.i
+
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
+Hand.obj: Hand.cpp.obj
+
+.PHONY : Hand.obj
+
+# target to build an object file
+Hand.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Hand.cpp.obj
+.PHONY : Hand.cpp.obj
+
+Hand.i: Hand.cpp.i
+
+.PHONY : Hand.i
+
+# target to preprocess a source file
+Hand.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Hand.cpp.i
+.PHONY : Hand.cpp.i
+
+Hand.s: Hand.cpp.s
+
+.PHONY : Hand.s
+
+# target to generate assembly for a file
+Hand.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Hand.cpp.s
+.PHONY : Hand.cpp.s
+
+HumanPlayer.obj: HumanPlayer.cpp.obj
+
+.PHONY : HumanPlayer.obj
+
+# target to build an object file
+HumanPlayer.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/HumanPlayer.cpp.obj
+.PHONY : HumanPlayer.cpp.obj
+
+HumanPlayer.i: HumanPlayer.cpp.i
+
+.PHONY : HumanPlayer.i
+
+# target to preprocess a source file
+HumanPlayer.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/HumanPlayer.cpp.i
+.PHONY : HumanPlayer.cpp.i
+
+HumanPlayer.s: HumanPlayer.cpp.s
+
+.PHONY : HumanPlayer.s
+
+# target to generate assembly for a file
+HumanPlayer.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/HumanPlayer.cpp.s
+.PHONY : HumanPlayer.cpp.s
+
+Player.obj: Player.cpp.obj
+
+.PHONY : Player.obj
+
+# target to build an object file
+Player.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Player.cpp.obj
+.PHONY : Player.cpp.obj
+
+Player.i: Player.cpp.i
+
+.PHONY : Player.i
+
+# target to preprocess a source file
+Player.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Player.cpp.i
+.PHONY : Player.cpp.i
+
+Player.s: Player.cpp.s
+
+.PHONY : Player.s
+
+# target to generate assembly for a file
+Player.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Player.cpp.s
+.PHONY : Player.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +401,33 @@ help:
 	@echo ... Poker
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... AlphaPlayer.obj
+	@echo ... AlphaPlayer.i
+	@echo ... AlphaPlayer.s
+	@echo ... Bet.obj
+	@echo ... Bet.i
+	@echo ... Bet.s
+	@echo ... BetHistory.obj
+	@echo ... BetHistory.i
+	@echo ... BetHistory.s
+	@echo ... BetaPlayer.obj
+	@echo ... BetaPlayer.i
+	@echo ... BetaPlayer.s
+	@echo ... Card.obj
+	@echo ... Card.i
+	@echo ... Card.s
+	@echo ... Game.obj
+	@echo ... Game.i
+	@echo ... Game.s
+	@echo ... Hand.obj
+	@echo ... Hand.i
+	@echo ... Hand.s
+	@echo ... HumanPlayer.obj
+	@echo ... HumanPlayer.i
+	@echo ... HumanPlayer.s
+	@echo ... Player.obj
+	@echo ... Player.i
+	@echo ... Player.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -80,6 +80,63 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/AlphaPlayer.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/AlphaPlayer.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Bet.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Bet.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/BetHistory.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/BetHistory.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/BetaPlayer.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/BetaPlayer.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Card.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Card.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Game.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Game.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Hand.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Hand.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/HumanPlayer.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/HumanPlayer.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Player.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Player.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/PlayerType.h">
+			<Option target="Poker"/>
+		</Unit>
 		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/main.cpp">
 			<Option target="Poker"/>
 		</Unit>
