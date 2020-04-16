@@ -11,18 +11,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81d3be6-3726-4ce7-94a5-64d689b68c65" name="Default Changelist" comment="">
+    <list default="true" id="d81d3be6-3726-4ce7-94a5-64d689b68c65" name="Default Changelist" comment="Bug fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlphaPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlphaPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BetHistory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BetHistory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BetHistory.h" beforeDir="false" afterPath="$PROJECT_DIR$/BetHistory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hand.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hand.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hand.h" beforeDir="false" afterPath="$PROJECT_DIR$/Hand.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumanPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumanPlayer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumanPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumanPlayer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1586216530672</updated>
       <workItem from="1586216531859" duration="12924000" />
-      <workItem from="1586830999425" duration="20322000" />
+      <workItem from="1586830999425" duration="25398000" />
     </task>
     <task id="LOCAL-00001" summary="Created skeleton">
       <created>1586220038095</created>
@@ -125,7 +121,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586250038730</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completed game">
+      <created>1587016008635</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587016008635</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removed completed TODO comments">
+      <created>1587016109620</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587016109620</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +165,19 @@
     <MESSAGE value="Created skeleton" />
     <MESSAGE value="Added initial round card dealing" />
     <MESSAGE value="Added TODO comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TODO comments" />
+    <MESSAGE value="Completed game" />
+    <MESSAGE value="Removed completed TODO comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed completed TODO comments" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/AlphaPlayer.cpp</url>
+          <line>6</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

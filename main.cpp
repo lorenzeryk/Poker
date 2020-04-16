@@ -31,6 +31,10 @@ int main() {
             default:
                 cout << "Please enter 0, 1, or 2" << endl;
         }
+        cout << "Enter 'y' if you want to play again. Enter anything else if you don't want to play again" << endl;
+        string playAgain;
+        cin >> playAgain;
+        if (playAgain != "y") break;
     }
     return 0;
 }

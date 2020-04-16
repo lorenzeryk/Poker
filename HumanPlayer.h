@@ -18,6 +18,7 @@ public:
 private:
     int id;
     int chips;
+    void printCards();
 };
 
 #endif //POKER_HUMANPLAYER_H
