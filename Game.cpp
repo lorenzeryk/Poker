@@ -89,7 +89,6 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
             break;
         } while (true);
 
-        //TODO prepare for next round
         int winner = checkWinner(players);
         switch (winner) {
             case -1:
@@ -185,7 +184,6 @@ void Game::printCards(bool visibleFlag, Player *player) {
 }
 
 int Game::biddingRound(int turn, Player *players[2], int& pot) {
-    //TODO finish function
     BetHistory roundHistory = BetHistory();
     bool player1Call = false;
     bool player2Call = false;
@@ -242,7 +240,6 @@ int Game::biddingRound(int turn, Player *players[2], int& pot) {
 }
 
 int Game::checkWinner(Player *players[2]) {
-    //TODO write function
     if (players[0]->getHand().evaluate() > players[1]->getHand().evaluate()) {
         return 0;
     } else if (players[0]->getHand().evaluate() < players[1]->getHand().evaluate()) {

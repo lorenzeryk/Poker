@@ -7,7 +7,7 @@
 #include "Player.h"
 #include <iostream>
 using namespace std;
-//TODO Alpha Rules
+
 class AlphaPlayer : public Player {
 public:
     AlphaPlayer(int id, int chips): Player(id, chips){
