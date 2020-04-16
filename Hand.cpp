@@ -19,11 +19,19 @@ Card Hand::getCard(int n) {
 };
 
 Hand Hand::getVisible() {
-//TODO
+    Hand returnHand = Hand();
+    for (Card card: hand) {
+        if (card.isFaceUp()) returnHand.addCard(card);
+    }
+    return returnHand;
 };
 
 int Hand::evaluate() {
-//TODO
+    int value = 0;
+    for (Card card: hand) {
+        value+= card.getValue();
+    }
+    return value;
 };
 
 void Hand::setCardVisible(bool visible, int n) {

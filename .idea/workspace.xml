@@ -13,17 +13,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d81d3be6-3726-4ce7-94a5-64d689b68c65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaPlayer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AlphaPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Card.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Card.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BetHistory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BetHistory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BetHistory.h" beforeDir="false" afterPath="$PROJECT_DIR$/BetHistory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/Game.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hand.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hand.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hand.h" beforeDir="false" afterPath="$PROJECT_DIR$/Hand.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HumanPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumanPlayer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HumanPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumanPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +101,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586216530672</updated>
-      <workItem from="1586216531859" duration="12673000" />
+      <workItem from="1586216531859" duration="12924000" />
+      <workItem from="1586830999425" duration="20322000" />
     </task>
     <task id="LOCAL-00001" summary="Created skeleton">
       <created>1586220038095</created>
@@ -111,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586220038095</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added initial round card dealing">
+      <created>1586249874974</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586249874974</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added TODO comments">
+      <created>1586250038730</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586250038730</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,14 +141,20 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Created skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created skeleton" />
+    <MESSAGE value="Added initial round card dealing" />
+    <MESSAGE value="Added TODO comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TODO comments" />
   </component>
 </project>

@@ -26,6 +26,9 @@ private:
     void endGame();
     void shuffleCards();
     void createDeckOfCards();
+    void printCards(bool visibleFlag, Player *player);
+    int biddingRound(int turn, Player *players[2], int& pot);
+    int checkWinner(Player* player[2]);
 };
 
 

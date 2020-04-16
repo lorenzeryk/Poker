@@ -5,16 +5,21 @@
 #ifndef POKER_ALPHAPLAYER_H
 #define POKER_ALPHAPLAYER_H
 #include "Player.h"
+#include <iostream>
+using namespace std;
 //TODO Alpha Rules
 class AlphaPlayer : public Player {
 public:
     AlphaPlayer(int id, int chips): Player(id, chips){
-
+        this->id = id;
+        this->chips = chips;
     }
 
-    int getBet(Hand opponent, BetHistory bh, int bet2player, bool canRaise, int pot) {
-        return 0;
-    }
+    int getBet(Hand opponent, BetHistory bh, int bet2player, bool canRaise, int pot);
+
+private:
+    int id;
+    int chips;
 };
 
 

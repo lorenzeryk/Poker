@@ -4,7 +4,9 @@
 
 #ifndef POKER_BETHISTORY_H
 #define POKER_BETHISTORY_H
-#include "Bet.h";
+#include "Bet.h"
+#include <vector>
+using namespace std;
 
 class BetHistory {
 public:
@@ -13,7 +15,7 @@ public:
     int getCount();
     Bet getBet(int n);
 private:
-
+    vector<Bet> history;
 };
 
 

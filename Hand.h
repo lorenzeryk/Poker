@@ -4,7 +4,7 @@
 
 #ifndef POKER_HAND_H
 #define POKER_HAND_H
-#include "Card.h";
+#include "Card.h"
 #include <vector>
 
 class Hand {
