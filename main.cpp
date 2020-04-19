@@ -26,7 +26,7 @@ int main() {
             case 1:
                 if (game.playGame(HUMAN, ALPHA, chipStartingValue, chipStartingValue, true)) break;
             case 2:
-                cout << "Sorry this feature has not been implemented yet. Please enter a 0, 1, or 2" << endl;
+                cout << "Sorry this feature has not been implemented yet. Please enter a 0 or 1" << endl;
                 break;
             default:
                 cout << "Please enter 0, 1, or 2" << endl;
@@ -34,7 +34,9 @@ int main() {
         cout << "Enter 'y' if you want to play again. Enter anything else if you don't want to play again" << endl;
         string playAgain;
         cin >> playAgain;
-        if (playAgain != "y") break;
+        if (playAgain != "y") {
+            break;
+        }
     }
     return 0;
 }

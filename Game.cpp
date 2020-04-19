@@ -10,6 +10,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
     Player* players[2] = {player1, player2};
     int randomCardIndex, biddingRoundReturnValue;
     int pot = 0;
+    handsPlayed = 0;
 
     while (handsPlayed < 20) {
         shuffleCards();
@@ -101,26 +102,43 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
             }
             break;
         } while (true);
-
-        int winner = checkWinner(players);
+        int winner = checkRoundWinner(players);
         switch (winner) {
             case -1:
                 if (reportFlag) cout << "This round was a tie. The pot will carry over to the next round" << endl;
                 break;
             case 0:
                 if (reportFlag) cout << "Player 1 won this round." << endl;
+                player1->addChips(pot);
                 pot = 0;
                 break;
             case 1:
                 if (reportFlag) cout << "Player 2 won this round." << endl;
+                player2->addChips(pot);
                 pot = 0;
                 break;
         }
-
+        if (reportFlag) {
+            cout << "Player 1 has " << player1->getChips() << " chips." << endl;
+            cout << "Player 2 has " << player2->getChips() << " chips." << endl;
+        }
         if (biddingRoundReturnValue == -1) break;
         handsPlayed++;
     }
-
+    int winner = checkGameWinner(players);
+    if (reportFlag) {
+        switch(winner) {
+            case -1:
+                cout << "The game was a tie" << endl;
+                break;
+            case 1:
+                cout << "Player 1 won the game" << endl;
+                break;
+            case 2:
+                cout << "Player 2 won the game" << endl;
+                break;
+        }
+    }
     endGame();
     return true;
 }
@@ -226,6 +244,7 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
             canRaise = true;
             raises++;
             roundHistory.addBet(Bet(bet, turn));
+            players[turn]->addChips(-bet);
             player1Call = false;
             player2Call = false;
         } else {
@@ -237,17 +256,19 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
                 canRaise = true;
                 raises++;
                 roundHistory.addBet(Bet(bet, turn));
+                players[turn]->addChips(-bet);
                 player1Call = false;
                 player2Call = false;
             }
         }
     }
 
-    turn = (turn + 1) % 2;
+
     if (reportFlag) {
         if (bet == bet2Player) cout << "Player " << turn + 1 << " called" << endl;
         if (bet > bet2Player) cout << "Player " << turn + 1 << " raised " << bet - bet2Player << endl;
     }
+    turn = (turn + 1) % 2;
     bet2Player = bet - bet2Player;
     if (raises == 3) canRaise = false;
     if (raises == 3 && bet2Player == 0) break;
@@ -258,10 +279,16 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
     return 2;
 }
 
-int Game::checkWinner(Player *players[2]) {
+int Game::checkRoundWinner(Player *players[2]) {
     if (players[0]->getHand().evaluate() > players[1]->getHand().evaluate()) {
         return 0;
     } else if (players[0]->getHand().evaluate() < players[1]->getHand().evaluate()) {
         return 1;
     } else return -1; //tie
+}
+
+int Game::checkGameWinner(Player **players) {
+    if (players[0]->getChips() > players[1]->getChips()) return 1;
+    if (players[1]->getChips() > players[0]->getChips()) return 2;
+    else return -1;
 }

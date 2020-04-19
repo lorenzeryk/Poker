@@ -28,7 +28,8 @@ private:
     void createDeckOfCards();
     void printCards(bool visibleFlag, Player *player);
     int biddingRound(int turn, Player *players[2], int& pot, bool reportFlag);
-    int checkWinner(Player* player[2]);
+    int checkRoundWinner(Player* players[2]);
+    int checkGameWinner(Player* players[2]);
 };
 
 
