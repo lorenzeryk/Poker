@@ -11,10 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81d3be6-3726-4ce7-94a5-64d689b68c65" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="d81d3be6-3726-4ce7-94a5-64d689b68c65" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +92,7 @@
       <workItem from="1586216531859" duration="12924000" />
       <workItem from="1586830999425" duration="25440000" />
       <workItem from="1587076080338" duration="3266000" />
-      <workItem from="1587342439044" duration="6578000" />
+      <workItem from="1587342439044" duration="7224000" />
     </task>
     <task id="LOCAL-00001" summary="Created skeleton">
       <created>1586220038095</created>
@@ -153,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587350115266</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added additional comments">
+      <created>1587350812507</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587350812507</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +192,7 @@
     <MESSAGE value="Bug fixes and cleaned up output" />
     <MESSAGE value="Bug fixes" />
     <MESSAGE value="Fixed chip summing bug and removed most warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed chip summing bug and removed most warnings" />
+    <MESSAGE value="Added additional comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added additional comments" />
   </component>
 </project>
