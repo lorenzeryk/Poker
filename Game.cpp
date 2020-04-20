@@ -37,6 +37,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
         if (handsPlayed % 2 == 0) turn = 0;
         else turn = 1;
 
+        //get hand starting chips
         if (reportFlag) cout << "Players giving ante for round. Each player puts in 10 chips" << endl;
         player1->addChips(-10);
         player2->addChips(-10);
@@ -50,6 +51,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
                 cout << "First bidding round" << endl;
             }
 
+            //first bidding round
             biddingRoundReturnValue = biddingRound(turn, players, pot, reportFlag);
             if (biddingRoundReturnValue == -1) {
                 //quit game
@@ -61,7 +63,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
                 break;
             }
 
-            //deal cards to players
+            //deal additional to players
             for (auto & player : players) {
                 randomCardIndex = rand() % deckOfCards.size();
                 player->dealCard(deckOfCards.at(randomCardIndex));
@@ -75,6 +77,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
                 cout << "Second bidding round" << endl;
             }
 
+            //second bidding round
             biddingRoundReturnValue = biddingRound(turn, players, pot, reportFlag);
             if (biddingRoundReturnValue == -1) {
                 //quit game
@@ -86,6 +89,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
                 break;
             }
 
+            //deal last card to players
             for (auto & player : players) {
                 randomCardIndex = rand() % deckOfCards.size();
                 player->dealCard(deckOfCards.at(randomCardIndex));
@@ -99,6 +103,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
                 cout << "Last bidding round" << endl;
             }
 
+            //final bidding round
             biddingRoundReturnValue = biddingRound(turn, players, pot, reportFlag);
             if (biddingRoundReturnValue == -1) {
                 //quit game
@@ -119,6 +124,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
             break;
         } while (true);
 
+        //check for round winner
         int winner = checkRoundWinner(players);
         switch (winner) {
             case -1:
@@ -146,6 +152,8 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
         if (quitGame) break;
         handsPlayed++;
     }
+
+    //check for game winner
     int winner = checkGameWinner(players);
     if (reportFlag) {
         switch(winner) {
@@ -177,7 +185,8 @@ Player* Game::createPlayer(PlayerType type, int id, int chips) {
         case BETA:
             return nullptr;
         default:
-            return nullptr;
+            cout << "Failed to create player";
+            exit(EXIT_FAILURE);
     }
 }
 
@@ -187,12 +196,14 @@ void Game::endGame() {
 }
 
 void Game::shuffleCards() {
+    //clear current deck and remake deck
     deckOfCards.clear();
     createDeckOfCards();
 
     // Initialize seed randomly
     srand(time(0));
 
+    //shuffle the cards
     for (int i=0; i < deckOfCards.size(); i++) {
         // Random for remaining positions.
         int r = i + (rand() % (52 -i));
@@ -232,7 +243,7 @@ void Game::createDeckOfCards() {
 void Game::printCards(bool visibleFlag, Player *player) {
     cout << endl << "Player " << player->getID() + 1 << " cards:" << endl;
     for (int j = 0; j < player->getHand().getCount(); j++) {
-        if (visibleFlag || player->getHand().getCard(j).isFaceUp()) {
+        if (visibleFlag || player->getHand().getCard(j).isFaceUp()) { //check if card is face up or if all cards should be printed
             cout << player->getHand().getCard(j).getName() + " ";
         } else {
           cout << "X ";
@@ -250,55 +261,54 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
     int bet;
     int bet2Player = 0, raises = 0;
 
-    Hand hand1 = players[0]->getHand();
-    Hand hand2 = players[1]->getHand();
-
     do {
     bet = players[turn]->getBet(players[(turn + 1) % 2]->getHand(), roundHistory, bet2Player, canRaise, pot);
 
     if (bet == -1) {
-        return -1;
+        return -1; //quit option selected
     } else if (bet == 0) {
         if (bet2Player != 0) return (turn + 1); //player folded
         else {
+            //set player that called to true
             if (turn == 0) player1Call = true;
             else player2Call = true;
-            pot += bet2Player;
+            pot += bet2Player; //add call to pot
         }
     } else {
         if (roundHistory.getCount() == 0) {
-            canRaise = true;
+            //add bet
             raises++;
             roundHistory.addBet(Bet(bet, turn));
-            //players[turn]->addChips(-bet);
+
+            //set both call booleans to false
             player1Call = false;
             player2Call = false;
         } else {
-            if (bet2Player == bet) {
+            if (bet2Player == bet) { //call
+                //set corresponding call boolean to true
                 if (turn == 0) player1Call = true;
                 else player2Call = true;
-                canRaise = false;
-            } else {
-                canRaise = true;
+            } else { //raise
                 raises++;
                 roundHistory.addBet(Bet(bet, turn));
-                //players[turn]->addChips(-bet);
                 player1Call = false;
                 player2Call = false;
             }
         }
     }
-players[turn]->addChips(-bet);
+
+    players[turn]->addChips(-bet); //take chips from player
 
     if (reportFlag) {
         if (bet == bet2Player) cout << "Player " << turn + 1 << " called" << endl;
         if (bet > bet2Player) cout << "Player " << turn + 1 << " raised " << bet - bet2Player << endl;
     }
+
     turn = (turn + 1) % 2;
-    bet2Player = bet - bet2Player;
-    if (raises == 3) canRaise = false;
-    pot += bet;
-    if (raises == 3 && bet2Player == 0) break;
+    bet2Player = bet - bet2Player; //update bet2Player
+    if (raises == 3) canRaise = false; //check if max raises reached
+    pot += bet; //update pot
+    if (raises == 3 && bet2Player == 0) break; //check if round is over
     } while (!fold && (!player1Call || !player2Call));
 
     if (reportFlag) cout << "The bidding round is over" << endl;
@@ -306,6 +316,7 @@ players[turn]->addChips(-bet);
 }
 
 int Game::checkRoundWinner(Player *players[2]) {
+    //return ID of player that won
     if (players[0]->getHand().evaluate() > players[1]->getHand().evaluate()) {
         return 0;
     } else if (players[0]->getHand().evaluate() < players[1]->getHand().evaluate()) {

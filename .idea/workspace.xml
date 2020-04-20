@@ -13,15 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d81d3be6-3726-4ce7-94a5-64d689b68c65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlphaPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BetHistory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BetHistory.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hand.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Hand.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumanPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/HumanPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HumanPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/HumanPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +95,7 @@
       <workItem from="1586216531859" duration="12924000" />
       <workItem from="1586830999425" duration="25440000" />
       <workItem from="1587076080338" duration="3266000" />
-      <workItem from="1587342439044" duration="5895000" />
+      <workItem from="1587342439044" duration="6578000" />
     </task>
     <task id="LOCAL-00001" summary="Created skeleton">
       <created>1586220038095</created>
@@ -154,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587292814515</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed chip summing bug and removed most warnings">
+      <created>1587350115266</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587350115266</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +187,7 @@
     <MESSAGE value="Removed completed TODO comments" />
     <MESSAGE value="Bug fixes and cleaned up output" />
     <MESSAGE value="Bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes" />
+    <MESSAGE value="Fixed chip summing bug and removed most warnings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed chip summing bug and removed most warnings" />
   </component>
 </project>
