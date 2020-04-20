@@ -17,7 +17,7 @@ public:
     void clearHand();
     void dealCard(Card c);
     Hand getHand();
-    void addChips(int chips);
+    void addChips(int chipstoAdd);
     int getChips();
 private:
     Hand hand;

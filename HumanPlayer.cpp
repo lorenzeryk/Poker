@@ -23,7 +23,7 @@ int HumanPlayer::getBet(Hand opponent, BetHistory bh, int bet2player, bool canRa
 
 
     cin >> playerBet;
-    while (playerBet != -1 && (playerBet > (bet2player + 10) || playerBet < bet2player)) {
+    while ((playerBet != -1 && playerBet != 0) && (playerBet > (bet2player + 10) || playerBet < bet2player)) {
         cout << "Value entered is not valid. Please enter a valid value" << endl;
         cin >> playerBet;
     }

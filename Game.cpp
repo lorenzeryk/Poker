@@ -1,3 +1,6 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cert-msc30-c"
+#pragma ide diagnostic ignored "bugprone-narrowing-conversions"
 //
 // Created by erykl on 4/6/2020.
 //
@@ -8,25 +11,28 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
     player1 = createPlayer(p0, 0, chips0);
     player2 = createPlayer(p1, 1, chips1);
     Player* players[2] = {player1, player2};
-    int randomCardIndex, biddingRoundReturnValue;
+    int randomCardIndex;
     int pot = 0;
     handsPlayed = 0;
+    bool quitGame = false;
 
-    while (handsPlayed < 20) {
+    while (handsPlayed < GAME_LENGTH) {
+        int biddingRoundReturnValue;
+        //set up for round
         shuffleCards();
         player1->clearHand();
         player2->clearHand();
 
         //deal cards to players
-        for (int i = 0; i < 2; i++) {
+        for (auto & player : players) {
             for (int j = 0; j < 3; j++) {
                 randomCardIndex = rand() % deckOfCards.size();
-                players[i]->dealCard(deckOfCards.at(randomCardIndex));
+                player->dealCard(deckOfCards.at(randomCardIndex));
                 deckOfCards.erase(deckOfCards.begin() + randomCardIndex);
             }
         }
 
-        //set starting player for round
+        //set starting player for round and get ante
         int turn;
         if (handsPlayed % 2 == 0) turn = 0;
         else turn = 1;
@@ -40,55 +46,65 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
             if (reportFlag) {
                 printCards(false, player1);
                 printCards(false, player2);
-                cout << "The pot is currently " << pot << endl << endl;
+                cout << endl << "The pot is currently " << pot << endl << endl;
                 cout << "First bidding round" << endl;
             }
 
             biddingRoundReturnValue = biddingRound(turn, players, pot, reportFlag);
-            if (biddingRoundReturnValue == -1) break;
+            if (biddingRoundReturnValue == -1) {
+                //quit game
+                quitGame = true;
+                break;
+            }
             if (biddingRoundReturnValue == 0 || biddingRoundReturnValue == 1 ) {
                 if (reportFlag) cout << "Player " << biddingRoundReturnValue << " folded" << endl << endl;
                 break;
             }
 
             //deal cards to players
-            for (int i = 0; i < 2; i++) {
+            for (auto & player : players) {
                 randomCardIndex = rand() % deckOfCards.size();
-                players[i]->dealCard(deckOfCards.at(randomCardIndex));
+                player->dealCard(deckOfCards.at(randomCardIndex));
                 deckOfCards.erase(deckOfCards.begin() + randomCardIndex);
             }
 
             if (reportFlag) {
                 printCards(false, player1);
                 printCards(false, player2);
-                cout << "The pot is currently " << pot << endl << endl;
+                cout << endl << "The pot is currently " << pot << endl << endl;
                 cout << "Second bidding round" << endl;
             }
 
             biddingRoundReturnValue = biddingRound(turn, players, pot, reportFlag);
-            if (biddingRoundReturnValue == -1) break;
-            if (biddingRoundReturnValue == -1) break;
+            if (biddingRoundReturnValue == -1) {
+                //quit game
+                quitGame = true;
+                break;
+            }
             if (biddingRoundReturnValue == 0 || biddingRoundReturnValue == 1 ) {
                 if (reportFlag) cout << "Player " << biddingRoundReturnValue << " folded" << endl << endl;
                 break;
             }
 
-            for (int i = 0; i < 2; i++) {
+            for (auto & player : players) {
                 randomCardIndex = rand() % deckOfCards.size();
-                players[i]->dealCard(deckOfCards.at(randomCardIndex));
+                player->dealCard(deckOfCards.at(randomCardIndex));
                 deckOfCards.erase(deckOfCards.begin() + randomCardIndex);
             }
 
             if (reportFlag) {
                 printCards(false, player1);
                 printCards(false, player2);
-                cout << "The pot is currently " << pot << endl;
+                cout << endl << "The pot is currently " << pot << endl;
                 cout << "Last bidding round" << endl;
             }
 
             biddingRoundReturnValue = biddingRound(turn, players, pot, reportFlag);
-            if (biddingRoundReturnValue == -1) break;
-            if (biddingRoundReturnValue == -1) break;
+            if (biddingRoundReturnValue == -1) {
+                //quit game
+                quitGame = true;
+                break;
+            }
             if (biddingRoundReturnValue == 0 || biddingRoundReturnValue == 1 ) {
                 if (reportFlag) cout << "Player " << biddingRoundReturnValue << " folded" << endl << endl;
                 break;
@@ -98,31 +114,36 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
             if (reportFlag) {
                 printCards(true, player1);
                 printCards(true, player2);
-                cout << "The round is over. The pot was " << pot << endl;
+                cout << endl << "The round is over. The pot was " << pot << endl;
             }
             break;
         } while (true);
+
         int winner = checkRoundWinner(players);
         switch (winner) {
             case -1:
-                if (reportFlag) cout << "This round was a tie. The pot will carry over to the next round" << endl;
+                if (reportFlag && !quitGame) cout << "This round was a tie. The pot will carry over to the next round" << endl;
                 break;
             case 0:
-                if (reportFlag) cout << "Player 1 won this round." << endl;
+                if (reportFlag && !quitGame) cout << "Player 1 won this round." << endl;
                 player1->addChips(pot);
                 pot = 0;
                 break;
             case 1:
-                if (reportFlag) cout << "Player 2 won this round." << endl;
+                if (reportFlag && !quitGame) cout << "Player 2 won this round." << endl;
                 player2->addChips(pot);
                 pot = 0;
+                break;
+            default:
+                cout << "Error in program";
+                exit(EXIT_FAILURE);
                 break;
         }
         if (reportFlag) {
             cout << "Player 1 has " << player1->getChips() << " chips." << endl;
             cout << "Player 2 has " << player2->getChips() << " chips." << endl;
         }
-        if (biddingRoundReturnValue == -1) break;
+        if (quitGame) break;
         handsPlayed++;
     }
     int winner = checkGameWinner(players);
@@ -136,6 +157,10 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
                 break;
             case 2:
                 cout << "Player 2 won the game" << endl;
+                break;
+            default:
+                cout << "Error in program";
+                exit(EXIT_FAILURE);
                 break;
         }
     }
@@ -167,7 +192,8 @@ void Game::shuffleCards() {
 
     // Initialize seed randomly
     srand(time(0));
-    for (int i=0; i< deckOfCards.size() ;i++) {
+
+    for (int i=0; i < deckOfCards.size(); i++) {
         // Random for remaining positions.
         int r = i + (rand() % (52 -i));
         swap(deckOfCards[i], deckOfCards[r]);
@@ -177,35 +203,34 @@ void Game::shuffleCards() {
 void Game::createDeckOfCards() {
     //add aces
     for (int i = 0; i < 4; i++) {
-        deckOfCards.push_back(Card("Ace", 1));
+        deckOfCards.emplace_back("Ace", 1);
     }
 
     //add numbered cards
     for (int i = 2; i < 11; i++) {
         for (int j = 0; j < 4; j++) {
-            deckOfCards.push_back(Card(to_string(i), i));
+            deckOfCards.emplace_back(to_string(i), i);
         }
     }
 
     //add Jacks
     for (int i = 0; i < 4; i++) {
-        deckOfCards.push_back(Card("Jack", 10));
+        deckOfCards.emplace_back("Jack", 10);
     }
 
     //add Queens
     for (int i = 0; i < 4; i++) {
-        deckOfCards.push_back(Card("Queen", 10));
+        deckOfCards.emplace_back("Queen", 10);
     }
 
     //add Kings
     for (int i = 0; i < 4; i++) {
-        deckOfCards.push_back(Card("King", 10));
+        deckOfCards.emplace_back("King", 10);
     }
 }
 
 void Game::printCards(bool visibleFlag, Player *player) {
     cout << endl << "Player " << player->getID() + 1 << " cards:" << endl;
-    int a = player->getHand().getCount();
     for (int j = 0; j < player->getHand().getCount(); j++) {
         if (visibleFlag || player->getHand().getCard(j).isFaceUp()) {
             cout << player->getHand().getCard(j).getName() + " ";
@@ -234,17 +259,18 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
     if (bet == -1) {
         return -1;
     } else if (bet == 0) {
-        if (canRaise) return turn; //player folded
+        if (bet2Player != 0) return (turn + 1); //player folded
         else {
             if (turn == 0) player1Call = true;
             else player2Call = true;
+            pot += bet2Player;
         }
     } else {
         if (roundHistory.getCount() == 0) {
             canRaise = true;
             raises++;
             roundHistory.addBet(Bet(bet, turn));
-            players[turn]->addChips(-bet);
+            //players[turn]->addChips(-bet);
             player1Call = false;
             player2Call = false;
         } else {
@@ -256,13 +282,13 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
                 canRaise = true;
                 raises++;
                 roundHistory.addBet(Bet(bet, turn));
-                players[turn]->addChips(-bet);
+                //players[turn]->addChips(-bet);
                 player1Call = false;
                 player2Call = false;
             }
         }
     }
-
+players[turn]->addChips(-bet);
 
     if (reportFlag) {
         if (bet == bet2Player) cout << "Player " << turn + 1 << " called" << endl;
@@ -271,8 +297,8 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
     turn = (turn + 1) % 2;
     bet2Player = bet - bet2Player;
     if (raises == 3) canRaise = false;
-    if (raises == 3 && bet2Player == 0) break;
     pot += bet;
+    if (raises == 3 && bet2Player == 0) break;
     } while (!fold && (!player1Call || !player2Call));
 
     if (reportFlag) cout << "The bidding round is over" << endl;

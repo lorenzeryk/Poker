@@ -13,7 +13,7 @@ public:
         this->id = id;
         this->chips = chips;
     }
-    int getBet(Hand opponent, BetHistory bh, int bet2player, bool canRaise, int pot);
+    int getBet(Hand opponent, BetHistory bh, int bet2player, bool canRaise, int pot) override;
 
 private:
     int id;
