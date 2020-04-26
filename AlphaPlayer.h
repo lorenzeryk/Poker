@@ -6,6 +6,7 @@
 #define POKER_ALPHAPLAYER_H
 #include "Player.h"
 #include <iostream>
+
 using namespace std;
 
 class AlphaPlayer : public Player {

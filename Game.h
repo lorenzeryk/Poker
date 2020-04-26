@@ -7,6 +7,7 @@
 #include<ctime>
 #include <vector>
 #include <iostream>
+#include <random>
 #include "PlayerType.h"
 #include "HumanPlayer.h"
 #include "AlphaPlayer.h"
@@ -15,7 +16,8 @@ using namespace std;
 class Game {
 public:
     bool playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool reportFlag);
-
+    int getPlayer1Wins();
+    int getPlayer2Wins();
 private:
     int handsPlayed = 0;
     const int GAME_LENGTH = 20;
@@ -24,12 +26,14 @@ private:
     Player* player2;
     vector<Card> deckOfCards;
     void endGame();
-    void shuffleCards();
+    void shuffleCards(uniform_real_distribution<double> dist, mt19937 mt);
     void createDeckOfCards();
     static void printCards(bool visibleFlag, Player *player);
     static int biddingRound(int turn, Player *players[2], int& pot, bool reportFlag);
     static int checkRoundWinner(Player* players[2]);
     static int checkGameWinner(Player* players[2]);
+    int player1Wins = 0;
+    int player2Wins = 0;
 };
 
 

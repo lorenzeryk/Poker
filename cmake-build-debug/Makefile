@@ -257,6 +257,33 @@ Card.cpp.s:
 	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/Card.cpp.s
 .PHONY : Card.cpp.s
 
+DataTracking.obj: DataTracking.cpp.obj
+
+.PHONY : DataTracking.obj
+
+# target to build an object file
+DataTracking.cpp.obj:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/DataTracking.cpp.obj
+.PHONY : DataTracking.cpp.obj
+
+DataTracking.i: DataTracking.cpp.i
+
+.PHONY : DataTracking.i
+
+# target to preprocess a source file
+DataTracking.cpp.i:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/DataTracking.cpp.i
+.PHONY : DataTracking.cpp.i
+
+DataTracking.s: DataTracking.cpp.s
+
+.PHONY : DataTracking.s
+
+# target to generate assembly for a file
+DataTracking.cpp.s:
+	$(MAKE) -f CMakeFiles\Poker.dir\build.make CMakeFiles/Poker.dir/DataTracking.cpp.s
+.PHONY : DataTracking.cpp.s
+
 Game.obj: Game.cpp.obj
 
 .PHONY : Game.obj
@@ -416,6 +443,9 @@ help:
 	@echo ... Card.obj
 	@echo ... Card.i
 	@echo ... Card.s
+	@echo ... DataTracking.obj
+	@echo ... DataTracking.i
+	@echo ... DataTracking.s
 	@echo ... Game.obj
 	@echo ... Game.i
 	@echo ... Game.s

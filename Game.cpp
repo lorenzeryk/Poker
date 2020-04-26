@@ -1,11 +1,9 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cert-msc30-c"
-#pragma ide diagnostic ignored "bugprone-narrowing-conversions"
 //
 // Created by erykl on 4/6/2020.
 //
-
 #include "Game.h"
+#include "DataTracking.h"
+#include "BetaPlayer.h"
 
 bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool reportFlag) {
     player1 = createPlayer(p0, 0, chips0);
@@ -15,11 +13,15 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
     int pot = 0;
     handsPlayed = 0;
     bool quitGame = false;
+    DataTracking tracking = DataTracking();
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_real_distribution<double> dist(1.0, 100000.0);
 
     while (handsPlayed < GAME_LENGTH) {
         int biddingRoundReturnValue;
         //set up for round
-        shuffleCards();
+        shuffleCards(dist, mt);
         player1->clearHand();
         player2->clearHand();
 
@@ -58,7 +60,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
                 quitGame = true;
                 break;
             }
-            if (biddingRoundReturnValue == 0 || biddingRoundReturnValue == 1 ) {
+            if (biddingRoundReturnValue == 1 || biddingRoundReturnValue == 2) {
                 if (reportFlag) cout << "Player " << biddingRoundReturnValue << " folded" << endl << endl;
                 break;
             }
@@ -128,14 +130,17 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
         int winner = checkRoundWinner(players);
         switch (winner) {
             case -1:
+                tracking.addRoundResult(0);
                 if (reportFlag && !quitGame) cout << "This round was a tie. The pot will carry over to the next round" << endl;
                 break;
             case 0:
+                tracking.addRoundResult(1);
                 if (reportFlag && !quitGame) cout << "Player 1 won this round." << endl;
                 player1->addChips(pot);
                 pot = 0;
                 break;
             case 1:
+                tracking.addRoundResult(2);
                 if (reportFlag && !quitGame) cout << "Player 2 won this round." << endl;
                 player2->addChips(pot);
                 pot = 0;
@@ -151,26 +156,30 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
         }
         if (quitGame) break;
         handsPlayed++;
+        tracking.addScores(player1->getHand().evaluate(), player2->getHand().evaluate());
     }
 
     //check for game winner
     int winner = checkGameWinner(players);
-    if (reportFlag) {
-        switch(winner) {
-            case -1:
-                cout << "The game was a tie" << endl;
-                break;
-            case 1:
-                cout << "Player 1 won the game" << endl;
-                break;
-            case 2:
-                cout << "Player 2 won the game" << endl;
-                break;
-            default:
-                cout << "Error in program";
-                exit(EXIT_FAILURE);
-                break;
-        }
+    switch(winner) {
+        case -1:
+            if (reportFlag) cout << "The game was a tie" << endl;
+            break;
+        case 1:
+            if (reportFlag) cout << "Player 1 won the game" << endl;
+            player1Wins++;
+            break;
+        case 2:
+            if (reportFlag) cout << "Player 2 won the game" << endl;
+            player2Wins++;
+            break;
+        default:
+            if (reportFlag) cout << "Error in program";
+            exit(EXIT_FAILURE);
+            break;
+    }
+    if ((p0 == ALPHA && p1 == BETA) || (p0 == ALPHA && p1 == ALPHA)) {
+        tracking.writeDataToFile();
     }
     endGame();
     return true;
@@ -183,7 +192,7 @@ Player* Game::createPlayer(PlayerType type, int id, int chips) {
         case ALPHA:
             return new AlphaPlayer(id, chips);
         case BETA:
-            return nullptr;
+            return new BetaPlayer(id, chips);
         default:
             cout << "Failed to create player";
             exit(EXIT_FAILURE);
@@ -195,18 +204,15 @@ void Game::endGame() {
     delete player2;
 }
 
-void Game::shuffleCards() {
+void Game::shuffleCards(uniform_real_distribution<double> dist, mt19937 mt) {
     //clear current deck and remake deck
     deckOfCards.clear();
     createDeckOfCards();
 
-    // Initialize seed randomly
-    srand(time(0));
-
     //shuffle the cards
     for (int i=0; i < deckOfCards.size(); i++) {
         // Random for remaining positions.
-        int r = i + (rand() % (52 -i));
+        int r = i + (static_cast<int>(dist(mt) * 10000.0) % (52 -i));
         swap(deckOfCards[i], deckOfCards[r]);
     }
 }
@@ -267,7 +273,7 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
     if (bet == -1) {
         return -1; //quit option selected
     } else if (bet == 0) {
-        if (bet2Player != 0) return (turn + 1); //player folded
+        if (bet2Player != 0) return ((turn + 1) % 2); //player folded
         else {
             //set player that called to true
             if (turn == 0) player1Call = true;
@@ -325,7 +331,19 @@ int Game::checkRoundWinner(Player *players[2]) {
 }
 
 int Game::checkGameWinner(Player **players) {
-    if (players[0]->getChips() > players[1]->getChips()) return 1;
-    if (players[1]->getChips() > players[0]->getChips()) return 2;
+    if (players[0]->getChips() > players[1]->getChips()) {
+        return 1;
+    }
+    if (players[1]->getChips() > players[0]->getChips()) {
+        return 2;
+    }
     else return -1;
+}
+
+int Game::getPlayer1Wins() {
+    return player1Wins;
+}
+
+int Game::getPlayer2Wins() {
+    return player2Wins;
 }

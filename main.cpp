@@ -1,8 +1,9 @@
 #include <iostream>
 #include "Game.h"
-
+#include "DataTracking.h"
 using namespace std;
 int main() {
+
     int chipStartingValue = 1000;
     int gameMode = -1;
 
@@ -26,7 +27,16 @@ int main() {
             case 1:
                 if (game.playGame(HUMAN, ALPHA, chipStartingValue, chipStartingValue, true)) break;
             case 2:
-                cout << "Sorry this feature has not been implemented yet. Please enter a 0 or 1" << endl;
+                cout << "How many games do you want played?";
+                int gamesToPlay;
+                cin >> gamesToPlay;
+                for (int i = 0; i < gamesToPlay; i++) {
+                    game.playGame(ALPHA, BETA, chipStartingValue, chipStartingValue, false);
+                }
+                //if (game.playGame(ALPHA, BETA, chipStartingValue, chipStartingValue, true)) break;
+                //cout << "Sorry this feature has not been implemented yet. Please enter a 0 or 1" << endl;
+                cout << "Alpha won " << game.getPlayer1Wins() << " games." << endl;
+                cout << "Beta won " << game.getPlayer2Wins() << " games." << endl;
                 break;
             default:
                 cout << "Please enter 0, 1, or 2" << endl;
@@ -38,5 +48,7 @@ int main() {
             break;
         }
     }
+    DataTracking test = DataTracking();
+    test.writeDataToFile();
     return 0;
 }
