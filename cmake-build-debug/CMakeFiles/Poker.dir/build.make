@@ -186,18 +186,18 @@ CMakeFiles/Poker.dir/BetaPlayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Poker.dir/BetaPlayer.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\BetaPlayer.cpp" -o CMakeFiles\Poker.dir\BetaPlayer.cpp.s
 
-CMakeFiles/Poker.dir/DataTracking.cpp.obj: CMakeFiles/Poker.dir/flags.make
-CMakeFiles/Poker.dir/DataTracking.cpp.obj: ../DataTracking.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Poker.dir/DataTracking.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Poker.dir\DataTracking.cpp.obj -c "C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\DataTracking.cpp"
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: CMakeFiles/Poker.dir/flags.make
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: ../GammaPlayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Poker.dir/GammaPlayer.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Poker.dir\GammaPlayer.cpp.obj -c "C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\GammaPlayer.cpp"
 
-CMakeFiles/Poker.dir/DataTracking.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Poker.dir/DataTracking.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\DataTracking.cpp" > CMakeFiles\Poker.dir\DataTracking.cpp.i
+CMakeFiles/Poker.dir/GammaPlayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Poker.dir/GammaPlayer.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\GammaPlayer.cpp" > CMakeFiles\Poker.dir\GammaPlayer.cpp.i
 
-CMakeFiles/Poker.dir/DataTracking.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Poker.dir/DataTracking.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\DataTracking.cpp" -o CMakeFiles\Poker.dir\DataTracking.cpp.s
+CMakeFiles/Poker.dir/GammaPlayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Poker.dir/GammaPlayer.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\erykl\Dropbox\Mines\Mines\Spring 2020\Game Design\Poker\GammaPlayer.cpp" -o CMakeFiles\Poker.dir\GammaPlayer.cpp.s
 
 # Object files for target Poker
 Poker_OBJECTS = \
@@ -211,7 +211,7 @@ Poker_OBJECTS = \
 "CMakeFiles/Poker.dir/HumanPlayer.cpp.obj" \
 "CMakeFiles/Poker.dir/AlphaPlayer.cpp.obj" \
 "CMakeFiles/Poker.dir/BetaPlayer.cpp.obj" \
-"CMakeFiles/Poker.dir/DataTracking.cpp.obj"
+"CMakeFiles/Poker.dir/GammaPlayer.cpp.obj"
 
 # External object files for target Poker
 Poker_EXTERNAL_OBJECTS =
@@ -226,7 +226,7 @@ Poker.exe: CMakeFiles/Poker.dir/Player.cpp.obj
 Poker.exe: CMakeFiles/Poker.dir/HumanPlayer.cpp.obj
 Poker.exe: CMakeFiles/Poker.dir/AlphaPlayer.cpp.obj
 Poker.exe: CMakeFiles/Poker.dir/BetaPlayer.cpp.obj
-Poker.exe: CMakeFiles/Poker.dir/DataTracking.cpp.obj
+Poker.exe: CMakeFiles/Poker.dir/GammaPlayer.cpp.obj
 Poker.exe: CMakeFiles/Poker.dir/build.make
 Poker.exe: CMakeFiles/Poker.dir/linklibs.rsp
 Poker.exe: CMakeFiles/Poker.dir/objects1.rsp

@@ -5,7 +5,6 @@
 #ifndef POKER_ALPHAPLAYER_H
 #define POKER_ALPHAPLAYER_H
 #include "Player.h"
-#include <iostream>
 
 using namespace std;
 
@@ -16,7 +15,7 @@ public:
         this->chips = chips;
     }
 
-    int getBet(Hand opponent, BetHistory bh, int bet2player, bool canRaise, int pot);
+    int getBet(Hand opponent, BetHistory bh, int bet2player, bool canRaise, int pot) override;
 
 private:
     int id;

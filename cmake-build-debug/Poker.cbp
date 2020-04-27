@@ -110,16 +110,16 @@
 		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Card.h">
 			<Option target="Poker"/>
 		</Unit>
-		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/DataTracking.cpp">
-			<Option target="Poker"/>
-		</Unit>
-		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/DataTracking.h">
-			<Option target="Poker"/>
-		</Unit>
 		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Game.cpp">
 			<Option target="Poker"/>
 		</Unit>
 		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Game.h">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/GammaPlayer.cpp">
+			<Option target="Poker"/>
+		</Unit>
+		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/GammaPlayer.h">
 			<Option target="Poker"/>
 		</Unit>
 		<Unit filename="C:/Users/erykl/Dropbox/Mines/Mines/Spring 2020/Game Design/Poker/Hand.cpp">

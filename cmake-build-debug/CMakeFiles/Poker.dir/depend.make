@@ -16,8 +16,13 @@ CMakeFiles/Poker.dir/BetHistory.cpp.obj: ../Bet.h
 CMakeFiles/Poker.dir/BetHistory.cpp.obj: ../BetHistory.cpp
 CMakeFiles/Poker.dir/BetHistory.cpp.obj: ../BetHistory.h
 
+CMakeFiles/Poker.dir/BetaPlayer.cpp.obj: ../Bet.h
+CMakeFiles/Poker.dir/BetaPlayer.cpp.obj: ../BetHistory.h
 CMakeFiles/Poker.dir/BetaPlayer.cpp.obj: ../BetaPlayer.cpp
 CMakeFiles/Poker.dir/BetaPlayer.cpp.obj: ../BetaPlayer.h
+CMakeFiles/Poker.dir/BetaPlayer.cpp.obj: ../Card.h
+CMakeFiles/Poker.dir/BetaPlayer.cpp.obj: ../Hand.h
+CMakeFiles/Poker.dir/BetaPlayer.cpp.obj: ../Player.h
 
 CMakeFiles/Poker.dir/Card.cpp.obj: ../Card.cpp
 CMakeFiles/Poker.dir/Card.cpp.obj: ../Card.h
@@ -25,13 +30,23 @@ CMakeFiles/Poker.dir/Card.cpp.obj: ../Card.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../AlphaPlayer.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../Bet.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../BetHistory.h
+CMakeFiles/Poker.dir/Game.cpp.obj: ../BetaPlayer.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../Card.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../Game.cpp
 CMakeFiles/Poker.dir/Game.cpp.obj: ../Game.h
+CMakeFiles/Poker.dir/Game.cpp.obj: ../GammaPlayer.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../Hand.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../HumanPlayer.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../Player.h
 CMakeFiles/Poker.dir/Game.cpp.obj: ../PlayerType.h
+
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: ../Bet.h
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: ../BetHistory.h
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: ../Card.h
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: ../GammaPlayer.cpp
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: ../GammaPlayer.h
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: ../Hand.h
+CMakeFiles/Poker.dir/GammaPlayer.cpp.obj: ../Player.h
 
 CMakeFiles/Poker.dir/Hand.cpp.obj: ../Card.h
 CMakeFiles/Poker.dir/Hand.cpp.obj: ../Hand.cpp

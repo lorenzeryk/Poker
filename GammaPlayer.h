@@ -1,15 +1,15 @@
 //
-// Created by erykl on 4/6/2020.
+// Created by erykl on 4/26/2020.
 //
 
-#ifndef POKER_BETAPLAYER_H
-#define POKER_BETAPLAYER_H
+#ifndef POKER_GAMMAPLAYER_H
+#define POKER_GAMMAPLAYER_H
 
 #include "Player.h"
 
-class BetaPlayer: public Player {
+class GammaPlayer: public Player {
 public:
-    BetaPlayer(int id, int chips): Player(id, chips){
+    GammaPlayer(int id, int chips): Player(id, chips){
         this->id = id;
         this->chips = chips;
     }
@@ -22,4 +22,4 @@ private:
 };
 
 
-#endif //POKER_BETAPLAYER_H
+#endif //POKER_GAMMAPLAYER_H

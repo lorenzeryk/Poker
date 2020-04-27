@@ -2,8 +2,10 @@
 // Created by erykl on 4/6/2020.
 //
 #include "Game.h"
-#include "DataTracking.h"
+#include "HumanPlayer.h"
+#include "AlphaPlayer.h"
 #include "BetaPlayer.h"
+#include "GammaPlayer.h"
 
 bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool reportFlag) {
     player1 = createPlayer(p0, 0, chips0);
@@ -13,7 +15,6 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
     int pot = 0;
     handsPlayed = 0;
     bool quitGame = false;
-    DataTracking tracking = DataTracking();
     random_device rd;
     mt19937 mt(rd());
     uniform_real_distribution<double> dist(1.0, 100000.0);
@@ -130,17 +131,14 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
         int winner = checkRoundWinner(players);
         switch (winner) {
             case -1:
-                tracking.addRoundResult(0);
                 if (reportFlag && !quitGame) cout << "This round was a tie. The pot will carry over to the next round" << endl;
                 break;
             case 0:
-                tracking.addRoundResult(1);
                 if (reportFlag && !quitGame) cout << "Player 1 won this round." << endl;
                 player1->addChips(pot);
                 pot = 0;
                 break;
             case 1:
-                tracking.addRoundResult(2);
                 if (reportFlag && !quitGame) cout << "Player 2 won this round." << endl;
                 player2->addChips(pot);
                 pot = 0;
@@ -156,7 +154,6 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
         }
         if (quitGame) break;
         handsPlayed++;
-        tracking.addScores(player1->getHand().evaluate(), player2->getHand().evaluate());
     }
 
     //check for game winner
@@ -178,9 +175,7 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
             exit(EXIT_FAILURE);
             break;
     }
-    if ((p0 == ALPHA && p1 == BETA) || (p0 == ALPHA && p1 == ALPHA)) {
-        tracking.writeDataToFile();
-    }
+
     endGame();
     return true;
 }
@@ -193,6 +188,8 @@ Player* Game::createPlayer(PlayerType type, int id, int chips) {
             return new AlphaPlayer(id, chips);
         case BETA:
             return new BetaPlayer(id, chips);
+        case GAMMA:
+            return new GammaPlayer(id, chips);
         default:
             cout << "Failed to create player";
             exit(EXIT_FAILURE);
@@ -273,7 +270,7 @@ int Game::biddingRound(int turn, Player *players[2], int& pot, bool reportFlag) 
     if (bet == -1) {
         return -1; //quit option selected
     } else if (bet == 0) {
-        if (bet2Player != 0) return ((turn + 1) % 2); //player folded
+        if (bet2Player != 0) return (turn + 1); //player folded
         else {
             //set player that called to true
             if (turn == 0) player1Call = true;

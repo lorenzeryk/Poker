@@ -4,5 +4,6 @@
 
 #ifndef POKER_PLAYERTYPE_H
 #define POKER_PLAYERTYPE_H
-enum PlayerType{HUMAN, ALPHA, BETA};
+enum PlayerType{HUMAN, ALPHA, BETA, GAMMA};
+
 #endif //POKER_PLAYERTYPE_H
