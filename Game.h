@@ -5,6 +5,8 @@
 #ifndef POKER_GAME_H
 #define POKER_GAME_H
 #include<ctime>
+#include <chrono>
+#include <algorithm>
 #include <vector>
 #include <iostream>
 #include <random>

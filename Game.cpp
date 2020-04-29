@@ -177,7 +177,8 @@ bool Game::playGame(PlayerType p0, PlayerType p1, int &chips0, int &chips1, bool
     }
 
     endGame();
-    return true;
+    if (quitGame) return true;
+    return false;
 }
 
 Player* Game::createPlayer(PlayerType type, int id, int chips) {
@@ -205,13 +206,8 @@ void Game::shuffleCards(uniform_real_distribution<double> dist, mt19937 mt) {
     //clear current deck and remake deck
     deckOfCards.clear();
     createDeckOfCards();
-
-    //shuffle the cards
-    for (int i=0; i < deckOfCards.size(); i++) {
-        // Random for remaining positions.
-        int r = i + (static_cast<int>(dist(mt) * 10000.0) % (52 -i));
-        swap(deckOfCards[i], deckOfCards[r]);
-    }
+    unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+    shuffle(deckOfCards.begin(), deckOfCards.end(), default_random_engine(seed));
 }
 
 void Game::createDeckOfCards() {

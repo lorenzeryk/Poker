@@ -7,7 +7,7 @@ string playerTypeToString(PlayerType type);
 
 int main() {
     int chipStartingValue = 1000;
-    int playerSelect = -1;
+    int playerSelect;
     PlayerType player1;
     PlayerType player2;
     bool report;
@@ -23,8 +23,8 @@ int main() {
             cout << "Input not valid. Please enter a valid option" << endl;
             cin.clear();
             cin.ignore();
-        } else break;
-    } while (true);
+        }
+    } while (playerSelect > 4 || playerSelect < 1);
 
     switch (playerSelect) {
         case 1:
@@ -39,6 +39,9 @@ int main() {
         case 4:
             player1 = GAMMA;
             break;
+        default:
+            cout << "Error setting player type";
+            exit(EXIT_FAILURE);
     }
 
     cout << "Select the type of player for Player 2" << endl;
@@ -49,8 +52,8 @@ int main() {
             cout << "Input not valid. Please enter a valid option" << endl;
             cin.clear();
             cin.ignore();
-        } else break;
-    } while (true);
+        }
+    } while (playerSelect > 4 || playerSelect < 1);
 
     switch (playerSelect) {
         case 1:
@@ -65,6 +68,9 @@ int main() {
         case 4:
             player2 = GAMMA;
             break;
+        default:
+            cout << "Error setting player type";
+            exit(EXIT_FAILURE);
     }
 
     bool firstInput = true;
@@ -111,16 +117,12 @@ string playerTypeToString(PlayerType type) {
     switch (type) {
         case HUMAN:
             return "Human player";
-            break;
         case ALPHA:
             return "Alpha AI";
-            break;
         case BETA:
             return "Beta AI";
-            break;
         case GAMMA:
             return "Gamma AI";
-            break;
         default:
             cout << "Failed to convert PlayerType to text";
             exit(EXIT_FAILURE);

@@ -11,28 +11,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d81d3be6-3726-4ce7-94a5-64d689b68c65" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GammaPlayer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GammaPlayer.h" afterDir="false" />
+    <list default="true" id="d81d3be6-3726-4ce7-94a5-64d689b68c65" name="Default Changelist" comment="Created Gamma AI and changed start text">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlphaPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlphaPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BetaPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BetaPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BetaPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/BetaPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTracking.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTracking.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlayerType.h" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/linklibs.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Poker.dir/linklibs.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Poker.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Poker.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,9 +63,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Graph Assignment" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -78,22 +78,10 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
-    <configuration name="Poker" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Poker" TARGET_NAME="Poker" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Poker" RUN_TARGET_NAME="Poker">
+    <configuration name="Poker" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Poker" TARGET_NAME="Poker" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Poker" RUN_TARGET_NAME="Poker">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -114,7 +102,8 @@
       <workItem from="1587076080338" duration="3266000" />
       <workItem from="1587342439044" duration="7254000" />
       <workItem from="1587827518768" duration="16592000" />
-      <workItem from="1587936743066" duration="9887000" />
+      <workItem from="1587936743066" duration="10132000" />
+      <workItem from="1588008085180" duration="9602000" />
     </task>
     <task id="LOCAL-00001" summary="Created skeleton">
       <created>1586220038095</created>
@@ -193,11 +182,18 @@
       <option name="project" value="LOCAL" />
       <updated>1587934992150</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Created Gamma AI and changed start text">
+      <created>1588006666079</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588006666080</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -209,16 +205,14 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Created skeleton" />
     <MESSAGE value="Added initial round card dealing" />
@@ -231,17 +225,49 @@
     <MESSAGE value="Added additional comments" />
     <MESSAGE value="Added documentation" />
     <MESSAGE value="Created Beta AI V1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Beta AI V1.0" />
+    <MESSAGE value="Created Gamma AI and changed start text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Gamma AI and changed start text" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Game.cpp</url>
-          <line>10</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="547" y="89" key="CommitChangelistDialog2" timestamp="1588092919325">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="547" y="89" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588092919325" />
+    <state width="916" height="253" key="GridCell.Tab.0.bottom" timestamp="1588181412860">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588181412860" />
+    <state width="916" height="253" key="GridCell.Tab.0.center" timestamp="1588181412859">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="253" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588181412859" />
+    <state width="916" height="253" key="GridCell.Tab.0.left" timestamp="1588181412859">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="253" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588181412859" />
+    <state width="916" height="253" key="GridCell.Tab.0.right" timestamp="1588181412860">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="916" height="253" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588181412860" />
+    <state width="1877" height="380" key="GridCell.Tab.1.bottom" timestamp="1588043832468">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="380" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588043832468" />
+    <state width="1877" height="380" key="GridCell.Tab.1.center" timestamp="1588043832468">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="380" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588043832468" />
+    <state width="1877" height="380" key="GridCell.Tab.1.left" timestamp="1588043832468">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="380" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588043832468" />
+    <state width="1877" height="380" key="GridCell.Tab.1.right" timestamp="1588043832468">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="380" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588043832468" />
+    <state x="665" y="128" key="SettingsEditor" timestamp="1588042456345">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="665" y="128" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588042456345" />
   </component>
 </project>
